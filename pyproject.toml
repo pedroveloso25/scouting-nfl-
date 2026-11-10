@@ -1,0 +1,23 @@
+[project]
+name = "scouting-nfl"
+version = "0.1.0"
+description = "Filtro de Promessas: avaliação de prospectos de WR para o NFL Draft (Combine + produção universitária)"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "nflreadpy>=0.1.5",
+    "polars>=1.44.2",
+    "pyarrow>=25.0.1",
+    "python-dotenv>=1.2.3",
+    "requests>=2.34.2",
+]
+
+[tool.uv]
+# OneDrive não aceita hardlinks do cache do uv (os error 396); copiar é mais lento, mas funciona em qualquer pasta
+link-mode = "copy"
+
+[dependency-groups]
+# Só para explorar os dados brutos (scripts/ver_dados.py); o produto final é um HTML estático
+dev = [
+    "streamlit>=1.64.0",
+]

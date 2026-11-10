@@ -1,0 +1,6 @@
+.env
+.venv/
+__pycache__/
+
+# Dados brutos baixados (nflverse/CFBD) são regeneráveis pelo pipeline; os processados ainda serão decididos
+data/raw/
