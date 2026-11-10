@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Filtro de Promessas</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="topo-inner">
+      <h1>Filtro de Promessas</h1>
+      <span class="sub">Wide Receivers no NFL Draft: perfil atlético e produção universitária, comparados a WRs draftados antes</span>
+      <nav class="abas" role="tablist" aria-label="Telas">
+        <button role="tab" id="aba-ranking" aria-controls="ranking" data-tela="ranking">Ranking</button>
+        <button role="tab" id="aba-perfil" aria-controls="perfil" data-tela="perfil">Perfil</button>
+        <button role="tab" id="aba-validacao" aria-controls="validacao" data-tela="validacao">Validação</button>
+        <button role="tab" id="aba-metodologia" aria-controls="metodologia" data-tela="metodologia">Metodologia</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="controles" id="controles-globais">
+      <div class="controle">
+        <span class="rotulo" id="rot-peso">Peso do perfil atlético na nota</span>
+        <div class="peso">
+          <input type="range" id="peso" min="0" max="5" step="1" aria-labelledby="rot-peso" aria-describedby="peso-valor">
+          <output id="peso-valor" class="tnum"></output>
+        </div>
+      </div>
+      <div class="controle">
+        <span class="rotulo">Cenários</span>
+        <div class="cenarios" id="cenarios"></div>
+      </div>
+    </div>
+
+    <section class="tela" id="ranking" role="tabpanel" aria-labelledby="aba-ranking"></section>
+    <section class="tela" id="perfil" role="tabpanel" aria-labelledby="aba-perfil" hidden></section>
+    <section class="tela" id="validacao" role="tabpanel" aria-labelledby="aba-validacao" hidden></section>
+    <section class="tela" id="metodologia" role="tabpanel" aria-labelledby="aba-metodologia" hidden></section>
+  </main>
+  <div id="dica" role="tooltip" hidden></div>
+
+  <script src="data/wr.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
