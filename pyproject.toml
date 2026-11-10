@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "nflreadpy>=0.1.5",
+    "numpy>=2.5.4",
     "polars>=1.44.2",
     "pyarrow>=25.0.1",
     "python-dotenv>=1.2.3",
@@ -17,7 +18,9 @@ dependencies = [
 link-mode = "copy"
 
 [dependency-groups]
-# Só para explorar os dados brutos (scripts/ver_dados.py); o produto final é um HTML estático
 dev = [
-    "streamlit>=1.64.0",
+    "pytest>=9.2.0",
 ]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
